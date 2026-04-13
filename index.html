@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vardhan Reddy PV - Portfolio</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#141414',
+                            700: '#1e1e1e',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                        },
+                        indigo: {
+                            400: '#818cf8',
+                            500: '#6366f1',
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-dark-900 text-gray-200 font-sans antialiased overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-200 text-base md:text-lg">
+
+    <!-- Decorative Animated Blobs Background -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full mix-blend-screen filter blur-3xl opacity-70 animate-blob"></div>
+        <div class="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-1/2 w-96 h-96 bg-purple-500/10 rounded-full mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-dark-900/70 border-b border-gray-800" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-500 tracking-tight">VRP</a>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 text-sm font-medium">
+                <li><a href="#about" class="hover:text-cyan-400 transition hover:-translate-y-0.5 block">About</a></li>
+                <li><a href="#skills" class="hover:text-cyan-400 transition hover:-translate-y-0.5 block">Skills</a></li>
+                <li><a href="#projects" class="hover:text-cyan-400 transition hover:-translate-y-0.5 block">Projects</a></li>
+                <li><a href="#contact" class="hover:text-cyan-400 transition hover:-translate-y-0.5 block">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white pb-1 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden default) -->
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-dark-800 border-b border-gray-800 py-4 px-6 flex-col space-y-4 shadow-xl"></div>
+    </nav>
+
+    <!-- Main Content wrapper for z-index above background -->
+    <main class="relative z-10 w-full">
+        
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-cyan-400 font-medium tracking-wide mb-4 reveal" style="transition-delay: 100ms;">Hi, my name is</p>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-4 reveal" style="transition-delay: 200ms;">
+                    Vardhan Reddy PV.
+                </h1>
+                <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-400 mb-8 reveal" style="transition-delay: 300ms;">
+                    I build intelligent systems & scalable apps.
+                </h2>
+                <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-400 mb-10 leading-relaxed reveal" style="transition-delay: 400ms;">
+                    Computer Science Engineering student with hands-on experience in full-stack development, AI/ML, real-time systems, and cloud fundamentals. Seeking entry-level Software Engineer / Backend / AI roles.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal" style="transition-delay: 500ms;">
+                    <a href="#projects" class="w-full sm:w-auto px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 text-white font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transform hover:-translate-y-1 transition duration-300">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-3 rounded-full border border-gray-600 hover:border-cyan-400 text-gray-200 hover:text-cyan-400 transition duration-300 font-medium">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 px-6 bg-dark-800/30">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center gap-4 mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">About Me</h2>
+                    <div class="h-[1px] bg-gray-700 flex-grow"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 text-gray-300">
+                    <div class="space-y-6 leading-relaxed">
+                        <p>
+                            I'm a passionate Computer Science Engineering student graduating from <strong class="text-white font-medium">The Oxford College of Engineering, VTU</strong> in 2027. My journey in tech is driven by a strong desire to solve complex problems and build systems that make an impact.
+                        </p>
+                        <p>
+                            Currently, I am looking for entry-level Software Engineer, Backend, or AI roles where I can contribute to meaningful projects. I have successfully built scalable applications using <span class="text-cyan-400">React, FastAPI, Python, and Docker</span>, demonstrating my proficiency across the full stack.
+                        </p>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="bg-dark-800 p-6 rounded-2xl border border-gray-800 shadow-xl hover:border-gray-700 transition">
+                            <h3 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                                <i data-lucide="graduation-cap" class="text-cyan-400"></i> Education
+                            </h3>
+                            <p class="font-medium text-gray-200 text-lg">Bachelor of Engineering in CSE</p>
+                            <p class="text-gray-400">The Oxford College of Engineering, VTU</p>
+                            <p class="text-sm text-cyan-500 mt-2">Expected Graduation: 2027</p>
+                        </div>
+                        <div class="bg-dark-800 p-6 rounded-2xl border border-gray-800 shadow-xl hover:border-gray-700 transition">
+                            <h3 class="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+                                <i data-lucide="award" class="text-indigo-400"></i> Key Achievements
+                            </h3>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0"></i> <span>Developed and maintain 27 public GitHub repositories.</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0"></i> <span>Consistent problem solver on various coding platforms.</span></li>
+                                <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0"></i> <span>Active professional network with 500+ LinkedIn connections.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex items-center gap-4 mb-12 reveal">
+                    <div class="h-[1px] bg-gray-700 flex-grow"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Technical Skills</h2>
+                    <div class="h-[1px] bg-gray-700 flex-grow"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Programming -->
+                    <div class="bg-dark-800 p-6 rounded-2xl border border-gray-800 hover:-translate-y-2 hover:border-cyan-500/50 transition duration-300 group">
+                        <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition">
+                            <i data-lucide="code-2" class="w-6 h-6 text-gray-300 group-hover:text-cyan-400 transition"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Programming</h3>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                            <li>TypeScript</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Frameworks -->
+                    <div class="bg-dark-800 p-6 rounded-2xl border border-gray-800 hover:-translate-y-2 hover:border-indigo-500/50 transition duration-300 group">
+                        <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-500/20 transition">
+                            <i data-lucide="layout" class="w-6 h-6 text-gray-300 group-hover:text-indigo-400 transition"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Frameworks</h3>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>React</li>
+                            <li>FastAPI</li>
+                            <li>Tailwind CSS</li>
+                            <li>HTML / CSS</li>
+                        </ul>
+                    </div>
+
+                    <!-- AI/ML -->
+                    <div class="bg-dark-800 p-6 rounded-2xl border border-gray-800 hover:-translate-y-2 hover:border-purple-500/50 transition duration-300 group">
+                        <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition">
+                            <i data-lucide="brain-circuit" class="w-6 h-6 text-gray-300 group-hover:text-purple-400 transition"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">AI / ML</h3>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>scikit-learn</li>
+                            <li>ARIMA</li>
+                            <li>Predictive Modeling</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools & Core -->
+                    <div class="bg-dark-800 p-6 rounded-2xl border border-gray-800 hover:-translate-y-2 hover:border-emerald-500/50 transition duration-300 group">
+                        <div class="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition">
+                            <i data-lucide="wrench" class="w-6 h-6 text-gray-300 group-hover:text-emerald-400 transition"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-3">Tools & Concepts</h3>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>Docker, Git, GitHub</li>
+                            <li>WebSockets</li>
+                            <li>DSA & OOP</li>
+                            <li>DBMS & SDLC</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-6 bg-dark-800/30">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center gap-4 mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Featured Projects</h2>
+                    <div class="h-[1px] bg-gray-700 flex-grow"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="project-card flex flex-col bg-dark-800 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-gray-600 transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-gray-900 to-indigo-900 flex items-center justify-center relative overflow-hidden group">
+                           <div class="absolute inset-0 bg-black/40 z-10"></div>
+                           <i data-lucide="database" class="w-16 h-16 text-indigo-400 z-0 opacity-50 transform group-hover:scale-110 transition duration-500"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white leading-tight">Real-Time AI-Powered Storage Intelligence</h3>
+                                <a href="https://github.com/vardhan-pv/storage-intelligence-system" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="GitHub">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 flex-grow">
+                                Full-stack real-time storage monitoring and optimization system with an AI-driven prediction engine using ARIMA models to forecast exhaustion and deliver clean-up recommendations.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan-400">
+                                <span class="bg-cyan-500/10 px-2 py-1 rounded">React</span>
+                                <span class="bg-cyan-500/10 px-2 py-1 rounded">FastAPI</span>
+                                <span class="bg-cyan-500/10 px-2 py-1 rounded">WebSockets</span>
+                                <span class="bg-cyan-500/10 px-2 py-1 rounded">scikit-learn</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card flex flex-col bg-dark-800 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-gray-600 transition-all duration-300" style="transition-delay: 100ms;">
+                        <div class="h-48 bg-gradient-to-br from-gray-900 to-cyan-900 flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-black/40 z-10"></div>
+                            <i data-lucide="cloud-lightning" class="w-16 h-16 text-cyan-400 z-0 opacity-50 transform group-hover:scale-110 transition duration-500"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white leading-tight">Student Cloud Platform (MVP)</h3>
+                                <a href="https://github.com/vardhan-pv/StudentHub" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="GitHub">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 flex-grow">
+                                Modern web-based platform for secure file upload, download, and user authentication. Implemented responsive frontend and backend logic with live deployment on Vercel.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan-400">
+                                <span class="bg-cyan-500/10 px-2 py-1 rounded">TypeScript</span>
+                                <span class="bg-cyan-500/10 px-2 py-1 rounded">Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card flex flex-col bg-dark-800 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-gray-600 transition-all duration-300" style="transition-delay: 200ms;">
+                        <div class="h-48 bg-gradient-to-br from-gray-900 to-purple-900 flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-black/40 z-10"></div>
+                            <i data-lucide="bot" class="w-16 h-16 text-purple-400 z-0 opacity-50 transform group-hover:scale-110 transition duration-500"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white leading-tight">AI GitHub Docs Assistant</h3>
+                                <a href="https://github.com/vardhan-pv/analysegit" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="GitHub">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 flex-grow">
+                                AI tool that automatically analyzes GitHub repositories and generates professional READMEs. Features one-click Pull Request creation for documentation updates with real-time change detection.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan-400">
+                                <span class="bg-cyan-500/10 px-2 py-1 rounded">Python</span>
+                                <span class="bg-cyan-500/10 px-2 py-1 rounded">FastAPI</span>
+                                <span class="bg-cyan-500/10 px-2 py-1 rounded">AI integration</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="project-card flex flex-col bg-dark-800 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-gray-600 transition-all duration-300" style="transition-delay: 300ms;">
+                        <div class="h-48 bg-gradient-to-br from-gray-900 to-rose-900 flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-black/40 z-10"></div>
+                            <i data-lucide="cpu" class="w-16 h-16 text-rose-400 z-0 opacity-50 transform group-hover:scale-110 transition duration-500"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white leading-tight">ALGO-AVENGERS-AI</h3>
+                                <a href="https://github.com/vardhan-pv/ALGO-AVENGERS-AI" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="GitHub">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 flex-grow">
+                                Python-based AI application focusing on complex algorithmic problem solving and computational analysis.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-rose-400">
+                                <span class="bg-rose-500/10 px-2 py-1 rounded">Python</span>
+                                <span class="bg-rose-500/10 px-2 py-1 rounded">AI/ML</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card flex flex-col bg-dark-800 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-gray-600 transition-all duration-300" style="transition-delay: 400ms;">
+                        <div class="h-48 bg-gradient-to-br from-gray-900 to-emerald-900 flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-black/40 z-10"></div>
+                            <i data-lucide="file-search" class="w-16 h-16 text-emerald-400 z-0 opacity-50 transform group-hover:scale-110 transition duration-500"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white leading-tight">resumecheck</h3>
+                                <a href="https://github.com/vardhan-pv/resumecheck" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="GitHub">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 flex-grow">
+                                Automated utility designed to parse, analyze, and provide actionable optimization feedback on professional resumes.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400">
+                                <span class="bg-emerald-500/10 px-2 py-1 rounded">Automation</span>
+                                <span class="bg-emerald-500/10 px-2 py-1 rounded">Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card flex flex-col bg-dark-800 border border-gray-800 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-gray-600 transition-all duration-300" style="transition-delay: 500ms;">
+                        <div class="h-48 bg-gradient-to-br from-gray-900 to-orange-900 flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-black/40 z-10"></div>
+                            <i data-lucide="trending-up" class="w-16 h-16 text-orange-400 z-0 opacity-50 transform group-hover:scale-110 transition duration-500"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white leading-tight">Predictmadiusemadi</h3>
+                                <a href="https://github.com/vardhan-pv/Predictmadiusemadi" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="GitHub">
+                                    <i data-lucide="github" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 flex-grow">
+                                Python-based predictive modeling application utilizing machine learning techniques for advanced data forecasting.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs font-mono text-orange-400">
+                                <span class="bg-orange-500/10 px-2 py-1 rounded">Python</span>
+                                <span class="bg-orange-500/10 px-2 py-1 rounded">Machine Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View All Link -->
+                <div class="mt-16 text-center">
+                    <a href="https://github.com/vardhan-pv?tab=repositories" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-700 text-gray-300 hover:text-cyan-400 hover:border-cyan-400 transition duration-300 font-medium group">
+                        View All 27 Projects on GitHub <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-6 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">Get In Touch</h2>
+                <p class="text-gray-400 max-w-xl mx-auto mb-10">
+                    I'm currently looking for new opportunities and my inbox is always open. Whether you have a question, a project idea, or just want to say hi, I'll try my best to get back to you!
+                </p>
+                
+                <a href="mailto:pvvardhanreddy28@gmail.com" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/20 hover:border-cyan-500 transition duration-300 font-semibold mb-16">
+                    <i data-lucide="mail" class="w-5 h-5"></i> Say Hello
+                </a>
+
+                <div class="flex justify-center gap-6">
+                    <a href="https://github.com/vardhan-pv" target="_blank" class="p-3 bg-dark-800 rounded-full text-gray-400 hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/20 transition duration-300 border border-gray-800 hover:border-gray-700" aria-label="GitHub">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/vardhan-reddy-pv" target="_blank" class="p-3 bg-dark-800 rounded-full text-gray-400 hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/20 transition duration-300 border border-gray-800 hover:border-gray-700" aria-label="LinkedIn">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8 text-center border-t border-gray-800 bg-dark-900 mt-auto">
+            <p class="text-sm text-gray-500 font-medium">
+                &copy; <span id="year"></span> Vardhan Reddy PV. All rights reserved. <br/>
+                <span class="text-xs text-gray-600 mt-2 block">Designed & Built with HTML, JS, and Tailwind CSS.</span>
+            </p>
+        </footer>
+
+    </main>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
